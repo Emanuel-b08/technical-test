@@ -12,35 +12,35 @@ namespace technical__test
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Identity autonumérico
-        public int ProductoID { get; set; }
+        public int ProductID { get; set; }
 
         [Required]
         [MaxLength(150)]
-        public string Nombre { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public int Codigo { get; set; }
+        public int Code { get; set; }
 
         [MaxLength(500)]
-        public string Descripcion { get; set; }
+        public string Description { get; set; }
 
         [Required]
-        public decimal PrecioUnitario { get; set; }
+        public decimal UnitaryPrice { get; set; }
 
         [Required]
         public int Stock { get; set; }
 
         [MaxLength(100)]
-        public string Categoria { get; set; }
+        public string Category { get; set; }
 
         [MaxLength(150)]
-        public string Proveedor { get; set; }
+        public string Supplier { get; set; }
 
         [Required]
-        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+        public DateTime CreationDate { get; set; } = DateTime.Now;
 
         [Required]
-        public DateTime FechaModificacion { get; set; } = DateTime.Now;
+        public DateTime ModificationDate { get; set; } = DateTime.Now;
     }
 }
 

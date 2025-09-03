@@ -25,13 +25,15 @@ namespace technical__test
 
             foreach (var entityEntry in entries)
             {
-                ((Product)entityEntry.Entity).FechaModificacion = DateTime.Now;
+                ((Product)entityEntry.Entity).ModificationDate = DateTime.Now;
 
                 if (entityEntry.State == EntityState.Added)
                 {
-                    ((Product)entityEntry.Entity).FechaCreacion = DateTime.Now;
+                    ((Product)entityEntry.Entity).CreationDate = DateTime.Now;
                 }
             }
+
+            return base.SaveChanges();
 
             return base.SaveChanges();
         }
