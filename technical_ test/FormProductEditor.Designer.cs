@@ -54,6 +54,7 @@
             // 
             this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(600, 40);
@@ -64,46 +65,55 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblNombre.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblNombre.Location = new System.Drawing.Point(30, 60);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.Size = new System.Drawing.Size(62, 19);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre:";
             // 
             // txtNombre
             // 
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtNombre.Location = new System.Drawing.Point(150, 57);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(400, 20);
+            this.txtNombre.Size = new System.Drawing.Size(400, 25);
             this.txtNombre.TabIndex = 2;
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblCodigo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblCodigo.Location = new System.Drawing.Point(30, 95);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(56, 19);
             this.lblCodigo.TabIndex = 3;
             this.lblCodigo.Text = "Código:";
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtCodigo.Location = new System.Drawing.Point(150, 92);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(150, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(150, 25);
             this.txtCodigo.TabIndex = 4;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblDescripcion.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblDescripcion.Location = new System.Drawing.Point(30, 130);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(82, 19);
             this.lblDescripcion.TabIndex = 5;
             this.lblDescripcion.Text = "Descripción:";
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtDescripcion.Location = new System.Drawing.Point(150, 127);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -113,90 +123,113 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblPrecio.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblPrecio.Location = new System.Drawing.Point(30, 200);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(79, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(102, 19);
             this.lblPrecio.TabIndex = 7;
             this.lblPrecio.Text = "Precio Unitario:";
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPrecio.Location = new System.Drawing.Point(150, 197);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(150, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(150, 25);
             this.txtPrecio.TabIndex = 8;
             // 
             // lblStock
             // 
             this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblStock.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblStock.Location = new System.Drawing.Point(30, 235);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(38, 13);
+            this.lblStock.Size = new System.Drawing.Size(45, 19);
             this.lblStock.TabIndex = 9;
             this.lblStock.Text = "Stock:";
             // 
             // txtStock
             // 
+            this.txtStock.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtStock.Location = new System.Drawing.Point(150, 232);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(150, 20);
+            this.txtStock.Size = new System.Drawing.Size(150, 25);
             this.txtStock.TabIndex = 10;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblCategoria.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblCategoria.Location = new System.Drawing.Point(30, 270);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(57, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(71, 19);
             this.lblCategoria.TabIndex = 11;
             this.lblCategoria.Text = "Categoría:";
             // 
             // txtCategoria
             // 
+            this.txtCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtCategoria.Location = new System.Drawing.Point(150, 267);
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(200, 20);
+            this.txtCategoria.Size = new System.Drawing.Size(200, 25);
             this.txtCategoria.TabIndex = 12;
             // 
             // lblProveedor
             // 
             this.lblProveedor.AutoSize = true;
+            this.lblProveedor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblProveedor.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblProveedor.Location = new System.Drawing.Point(30, 305);
             this.lblProveedor.Name = "lblProveedor";
-            this.lblProveedor.Size = new System.Drawing.Size(59, 13);
+            this.lblProveedor.Size = new System.Drawing.Size(75, 19);
             this.lblProveedor.TabIndex = 13;
             this.lblProveedor.Text = "Proveedor:";
             // 
             // txtProveedor
             // 
+            this.txtProveedor.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtProveedor.Location = new System.Drawing.Point(150, 302);
             this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(200, 20);
+            this.txtProveedor.Size = new System.Drawing.Size(200, 25);
             this.txtProveedor.TabIndex = 14;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.Location = new System.Drawing.Point(150, 350);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 30);
+            this.btnGuardar.Size = new System.Drawing.Size(120, 35);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(270, 350);
+            this.btnCancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(290, 350);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(120, 35);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormProductEditor
             // 
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(600, 420);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtProveedor);

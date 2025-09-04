@@ -5,15 +5,23 @@ using System.Windows.Forms;
 
 namespace technical__test
 {
-    public partial class Form1 : Form
+    public partial class FormProductList : Form
     {
-        public Form1()
+        public FormProductList()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Agregar columna de selección si no existe
+            if (!dgvProductos.Columns.Contains("Seleccionar"))
+            {
+                var chk = new DataGridViewCheckBoxColumn();
+                chk.HeaderText = "Seleccionar";
+                chk.Name = "Seleccionar";
+                dgvProductos.Columns.Insert(0, chk); // Insertar al inicio
+            }
             CargarProductos();
         }
 
@@ -57,40 +65,69 @@ namespace technical__test
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dgvProductos.SelectedRows.Count != 1)
+            // Obtener filas marcadas
+            var filasSeleccionadas = dgvProductos.Rows
+                .Cast<DataGridViewRow>()
+                .Where(r => Convert.ToBoolean(r.Cells["Seleccionar"].Value) == true)
+                .ToList();
+
+            if (filasSeleccionadas.Count == 0)
             {
-                MessageBox.Show("Seleccione un único producto para editar.");
+                MessageBox.Show("Seleccione al menos un producto para editar.");
                 return;
             }
 
-            int id = (int)dgvProductos.SelectedRows[0].Cells["ProductID"].Value;
+            if (filasSeleccionadas.Count > 1)
+            {
+                MessageBox.Show("Seleccione solo un producto para editar.");
+                return;
+            }
+
+            // Solo una fila marcada
+            int id = (int)filasSeleccionadas[0].Cells["ProductID"].Value;
             var frm = new FormProductEditor(id);
             if (frm.ShowDialog() == DialogResult.OK)
+            {
                 CargarProductos();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvProductos.SelectedRows.Count == 0)
+            var controller = new ProductController();
+
+            // Filtrar filas seleccionadas
+            var filasSeleccionadas = dgvProductos.Rows
+                .Cast<DataGridViewRow>()
+                .Where(r => Convert.ToBoolean(r.Cells["Seleccionar"].Value) == true)
+                .ToList();
+
+            if (filasSeleccionadas.Count == 0)
             {
                 MessageBox.Show("Seleccione al menos un producto para eliminar.");
                 return;
             }
 
-            var confirm = MessageBox.Show("¿Está seguro de eliminar los productos seleccionados?",
+            var confirm = MessageBox.Show($"¿Está seguro de eliminar los {filasSeleccionadas.Count} productos seleccionados?",
                                           "Confirmar eliminación",
                                           MessageBoxButtons.YesNo);
             if (confirm == DialogResult.No) return;
 
-            var controller = new ProductController();
-
-            foreach (DataGridViewRow row in dgvProductos.SelectedRows)
+            // Eliminamos los productos seleccionados
+            foreach (var row in filasSeleccionadas)
             {
                 int id = (int)row.Cells["ProductID"].Value;
                 controller.Delete(id);
             }
 
+            // Recargamos la lista
             CargarProductos();
+        }
+        
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

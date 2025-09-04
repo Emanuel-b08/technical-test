@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormProductList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormProductList.Designer.cs">
+      <DependentUpon>FormProductList.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProductEditor.cs">
       <SubType>Form</SubType>
@@ -86,8 +86,8 @@
     <Compile Include="ProductController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormProductList.resx">
+      <DependentUpon>FormProductList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductEditor.resx">
       <DependentUpon>FormProductEditor.cs</DependentUpon>
