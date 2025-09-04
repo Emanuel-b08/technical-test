@@ -1,73 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace technical__test
 {
-    public partial class FormProductList : Form
+    public partial class Form1 : Form
     {
-        public FormProductList()
+        public Form1()
         {
             InitializeComponent();
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
-        private void FormProductList_Load(object sender, EventArgs e)
+
+        private void Form1_Load(object sender, EventArgs e)
         {
             CargarProductos();
         }
 
         private void CargarProductos(string filtro = "")
         {
-            using (var db = new MiDbContext())
-            {
-                var productos = db.Product.AsQueryable();
+            var controller = new ProductController();
+            var productos = controller.GetAll(filtro);
 
-                if (!string.IsNullOrWhiteSpace(filtro))
+            dgvProductos.DataSource = productos
+                .Select(p => new
                 {
-                    productos = productos.Where(p => p.Name.Contains(filtro));
-                }
+                    p.ProductID,
+                    p.GuidCode,
+                    p.Name,
+                    p.Code,
+                    p.Description,
+                    p.UnitaryPrice,
+                    p.Stock,
+                    p.Category,
+                    p.Supplier,
+                    p.CreationDate,
+                    p.ModificationDate
+                })
+                .ToList();
 
-                dgvProductos.DataSource = productos
-                    .Select(p => new
-                    {
-                        p.ProductID,
-                        p.Name,
-                        p.Code,
-                        p.Description,
-                        p.UnitaryPrice,
-                        p.Stock,
-                        p.Category,
-                        p.Supplier,
-                        p.CreationDate,
-                        p.ModificationDate
-                    })
-                    .ToList();
-
-                dgvProductos.Columns["ProductID"].Visible = false;
-            }
+            dgvProductos.Columns["ProductID"].Visible = false;
+            dgvProductos.Columns["GuidCode"].ReadOnly = true;
         }
 
-        private void btnBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             CargarProductos(txtBuscar.Text);
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            FormProductEditor frm = new FormProductEditor();
+            var frm = new FormProductEditor();
             if (frm.ShowDialog() == DialogResult.OK)
-            {
                 CargarProductos();
-            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -78,12 +63,10 @@ namespace technical__test
                 return;
             }
 
-            int id = (int)dgvProductos.SelectedRows[0].Cells["ProductoID"].Value;
-            FormProductEditor frm = new FormProductEditor(id);
+            int id = (int)dgvProductos.SelectedRows[0].Cells["ProductID"].Value;
+            var frm = new FormProductEditor(id);
             if (frm.ShowDialog() == DialogResult.OK)
-            {
                 CargarProductos();
-            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -99,16 +82,12 @@ namespace technical__test
                                           MessageBoxButtons.YesNo);
             if (confirm == DialogResult.No) return;
 
-            using (var db = new MiDbContext())
+            var controller = new ProductController();
+
+            foreach (DataGridViewRow row in dgvProductos.SelectedRows)
             {
-                foreach (DataGridViewRow row in dgvProductos.SelectedRows)
-                {
-                    int id = (int)row.Cells["ProductoID"].Value;
-                    var prod = db.Product.Find(id);
-                    if (prod != null)
-                        db.Product.Remove(prod);
-                }
-                db.SaveChanges();
+                int id = (int)row.Cells["ProductID"].Value;
+                controller.Delete(id);
             }
 
             CargarProductos();

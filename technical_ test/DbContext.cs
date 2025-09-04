@@ -35,7 +35,7 @@ namespace technical__test
 
             return base.SaveChanges();
 
-            return base.SaveChanges();
+           
         }
     }
 }

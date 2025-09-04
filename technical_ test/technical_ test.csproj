@@ -77,8 +77,13 @@
     <Compile Include="Migrations\202509032106127_DateDateModificationDateChange.Designer.cs">
       <DependentUpon>202509032106127_DateDateModificationDateChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202509040044298_ActualizacionModelo.cs" />
+    <Compile Include="Migrations\202509040044298_ActualizacionModelo.Designer.cs">
+      <DependentUpon>202509040044298_ActualizacionModelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="product.cs" />
+    <Compile Include="ProductController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -92,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202509032106127_DateDateModificationDateChange.resx">
       <DependentUpon>202509032106127_DateDateModificationDateChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202509040044298_ActualizacionModelo.resx">
+      <DependentUpon>202509040044298_ActualizacionModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

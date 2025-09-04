@@ -4,16 +4,30 @@
     {
         private System.ComponentModel.IContainer components = null;
 
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.Label lblProveedor;
+        private System.Windows.Forms.TextBox txtProveedor;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
-
-        #region Windows Form Designer generated code
 
         private void InitializeComponent()
         {
@@ -52,7 +66,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(30, 60);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(54, 15);
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -60,7 +74,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(150, 57);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(400, 23);
+            this.txtNombre.Size = new System.Drawing.Size(400, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // lblCodigo
@@ -68,7 +82,7 @@
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Location = new System.Drawing.Point(30, 95);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(49, 15);
+            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
             this.lblCodigo.TabIndex = 3;
             this.lblCodigo.Text = "Código:";
             // 
@@ -76,7 +90,7 @@
             // 
             this.txtCodigo.Location = new System.Drawing.Point(150, 92);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(150, 23);
+            this.txtCodigo.Size = new System.Drawing.Size(150, 20);
             this.txtCodigo.TabIndex = 4;
             // 
             // lblDescripcion
@@ -84,7 +98,7 @@
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Location = new System.Drawing.Point(30, 130);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(72, 15);
+            this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
             this.lblDescripcion.TabIndex = 5;
             this.lblDescripcion.Text = "Descripción:";
             // 
@@ -101,7 +115,7 @@
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Location = new System.Drawing.Point(30, 200);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(89, 15);
+            this.lblPrecio.Size = new System.Drawing.Size(79, 13);
             this.lblPrecio.TabIndex = 7;
             this.lblPrecio.Text = "Precio Unitario:";
             // 
@@ -109,7 +123,7 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(150, 197);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(150, 23);
+            this.txtPrecio.Size = new System.Drawing.Size(150, 20);
             this.txtPrecio.TabIndex = 8;
             // 
             // lblStock
@@ -117,7 +131,7 @@
             this.lblStock.AutoSize = true;
             this.lblStock.Location = new System.Drawing.Point(30, 235);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(39, 15);
+            this.lblStock.Size = new System.Drawing.Size(38, 13);
             this.lblStock.TabIndex = 9;
             this.lblStock.Text = "Stock:";
             // 
@@ -125,7 +139,7 @@
             // 
             this.txtStock.Location = new System.Drawing.Point(150, 232);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(150, 23);
+            this.txtStock.Size = new System.Drawing.Size(150, 20);
             this.txtStock.TabIndex = 10;
             // 
             // lblCategoria
@@ -133,7 +147,7 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Location = new System.Drawing.Point(30, 270);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(61, 15);
+            this.lblCategoria.Size = new System.Drawing.Size(57, 13);
             this.lblCategoria.TabIndex = 11;
             this.lblCategoria.Text = "Categoría:";
             // 
@@ -141,7 +155,7 @@
             // 
             this.txtCategoria.Location = new System.Drawing.Point(150, 267);
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(200, 23);
+            this.txtCategoria.Size = new System.Drawing.Size(200, 20);
             this.txtCategoria.TabIndex = 12;
             // 
             // lblProveedor
@@ -149,7 +163,7 @@
             this.lblProveedor.AutoSize = true;
             this.lblProveedor.Location = new System.Drawing.Point(30, 305);
             this.lblProveedor.Name = "lblProveedor";
-            this.lblProveedor.Size = new System.Drawing.Size(65, 15);
+            this.lblProveedor.Size = new System.Drawing.Size(59, 13);
             this.lblProveedor.TabIndex = 13;
             this.lblProveedor.Text = "Proveedor:";
             // 
@@ -157,7 +171,7 @@
             // 
             this.txtProveedor.Location = new System.Drawing.Point(150, 302);
             this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(200, 23);
+            this.txtProveedor.Size = new System.Drawing.Size(200, 20);
             this.txtProveedor.TabIndex = 14;
             // 
             // btnGuardar
@@ -206,26 +220,7 @@
             this.Load += new System.EventHandler(this.FormProductEditor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
-
-        #endregion
-
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Label lblStock;
-        private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.TextBox txtCategoria;
-        private System.Windows.Forms.Label lblProveedor;
-        private System.Windows.Forms.TextBox txtProveedor;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
     }
 }

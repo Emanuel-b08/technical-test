@@ -41,6 +41,10 @@ namespace technical__test
 
         [Required]
         public DateTime ModificationDate { get; set; } = DateTime.Now;
+
+        [Required]
+        public Guid GuidCode { get; set; }
+
     }
 }
 
